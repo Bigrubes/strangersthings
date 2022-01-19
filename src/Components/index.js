@@ -1,0 +1,9 @@
+export {default as Posts} from './Posts';
+export {default as Login} from './Login';
+export {default as Register} from './Register';
+export {default as PostForm} from './PostForm';
+export {default as AddPost} from './AddPost';
+export {default as AccountForm} from './AccountForm';
+export {default as MessageForm} from './MessageForm';
+export {default as Home} from './Home';
+export {default as PostSingle} from './PostSingle';
