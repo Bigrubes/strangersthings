@@ -8,7 +8,6 @@ const AccountForm = ({ setToken, setUser}) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [message, setsetMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,7 +27,6 @@ const AccountForm = ({ setToken, setUser}) => {
       console.log('dataObj: ', dataObj);
       const users = dataObj && dataObj.data && dataObj.data;
       if(users) {
-        // navigate('/posts');
         setUsername('');
         setPassword('');
         setToken(token);
@@ -46,10 +44,8 @@ const AccountForm = ({ setToken, setUser}) => {
           {accountTitle}
         </h1>
         <form onSubmit={handleSubmit}>
-        {/* {message && <div>{message}</div>} */}
           <input required label="Username"value={username} onChange={(event) => { setUsername(event.target.value) }}/>
           <input required label="Password" type="password" variant="outlined" value={password} onChange={(event) => { setPassword(event.target.value) }}/>
-          
           <button type="submit">
             {accountTitle}
           </button>

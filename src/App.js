@@ -5,12 +5,11 @@ import { callApi } from './api';
 import './App.css'
 
 import {
+
   AccountForm,
-  AddPost,
   Home,
   Posts,
   MessageForm,
-  PostSingle
 
 } from './Components';
 
@@ -29,11 +28,8 @@ const App = () => {
    }
   }
 
-  
-
-  //run on initial render only
   useEffect(() => {
-    //persistent login
+
     if(localStorage.getItem('token')) {
       setToken(localStorage.getItem('token'));
     }

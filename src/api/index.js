@@ -49,9 +49,7 @@ export const login = async (username, password) => {
 		console.log(response);
 		const result = await response.json();
 		console.log(result);
-		
-		// const {data: {token} } = await response.json();
-		// return token;
+
 	} catch (error) {
 		console.error(error);
 	}

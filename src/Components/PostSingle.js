@@ -4,16 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import './postSingle.css'
 
 const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
-  //children only goes one level
-  //if multiple levels  are needed to do drilldown
-  //use the useContext hook;
-  // const {post, token, children, posts, setPosts, newPosts} = props;
+
   const navigate = useNavigate();
-  // const params = useParams()
   
   const handleDelete = async () => {
     try {
-      await deletePost(token, post._id); //the specific fetch call only updates the backend through a frontend event such as a click
+      await deletePost(token, post._id); 
       const newPosts = posts.filter((element) => {
         return element._id !== post._id;
       });
@@ -24,7 +20,6 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
     }
   };
 
-  
   return post 
     ? <div style={{margin: '.2rem'}}>
         <h3>title: {post.title}</h3>
@@ -45,4 +40,3 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
 }
 
 export default PostSingle;
-

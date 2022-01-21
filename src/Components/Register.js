@@ -1,9 +1,7 @@
 import {useState} from 'react';
 import { register } from '../api';
-const Register = ({
-	token,
-	setToken
-}) => {
+const Register = ({token,setToken}) => {
+	
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 

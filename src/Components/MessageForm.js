@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { addMessage, callApi } from "../api";
@@ -29,13 +28,10 @@ const MessageForm = ({token, setPosts}) => {
 			<h2>Comment Form</h2>
 			<label htmlFor="message-input">Message: </label>
 			<input value={content} onChange={(e)=> { setContent(e.target.value)}} id="message-input"/>
-			<button>subbmit</button>
+			<button>submit</button>
 		</form>
- 
+
 	)
-
-	
-
 }
 
 export default MessageForm;

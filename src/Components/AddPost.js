@@ -16,7 +16,6 @@ const AddPost = ({fetchPosts, setPosts, token, posts}) => {
         body: { post },
         token
       })
-      // await fetchPosts();
       setPosts([...posts, newPost]);
       setPost(blankPost);
     } catch (error) {
