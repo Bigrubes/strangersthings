@@ -60,7 +60,7 @@ const App = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/posts" element={ <Posts token={token} setPosts={setPosts} posts={posts} user={user} handlePosts={handlePosts} /> } />
       <Route path="/account/:method" element={ <AccountForm user={user} setUser={setUser} setToken={setToken} /> } />
-      <Route path="/posts/:postId/Messages" element={<MessageForm token={token} setPosts={setPosts}/>} />
+      <Route path="/posts/:postId/messages" element={<MessageForm token={token} setPosts={setPosts}/>} />
     </Routes>
   </>
 }

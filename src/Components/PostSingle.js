@@ -1,6 +1,6 @@
 import React from 'react';
 import { deletePost } from '../api';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './postSingle.css'
 
 const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
@@ -9,13 +9,13 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
   //use the useContext hook;
   // const {post, token, children, posts, setPosts, newPosts} = props;
   const navigate = useNavigate();
-  const params = useParams()
+  // const params = useParams()
   
   const handleDelete = async () => {
     try {
-      await deletePost(token, post.id); //the specific fetch call only updates the backend through a frontend event such as a click
+      await deletePost(token, post._id); //the specific fetch call only updates the backend through a frontend event such as a click
       const newPosts = posts.filter((element) => {
-        return element.id !== post.id;
+        return element._id !== post._id;
       });
       setPosts(newPosts);
 
@@ -27,15 +27,12 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
   
   return post 
     ? <div style={{margin: '.2rem'}}>
-        <h5>
-          Location: {post.location}
-        </h5>
-        <div>
-          Description: {post.description}
-          <button>delete</button>
-        </div>
+        <h3>title: {post.title}</h3>
+        <div>Description: {post.description}</div>
+        <div>price: {post.price}</div>
+        <div>Location: {post.location}</div>
         {post.isAuthor && <button onClick={handleDelete}>DELETE</button>}
-        {!post.isAuthor && <button onClick={() => {navigate(`/posts/${post.id}/messages`)}}>Message</button>}
+        {!post.isAuthor && <button onClick={() => {navigate(`/posts/${post._id}/messages`)}}>Message</button>}
         {post.messages.map((elem) => {
           return (
             <div>
@@ -44,7 +41,7 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
           )
         })}
       </div>
-    : ''
+    : 'Loading...'
 }
 
 export default PostSingle;

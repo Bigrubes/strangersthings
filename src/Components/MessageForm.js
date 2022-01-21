@@ -5,7 +5,9 @@ import { addMessage, callApi } from "../api";
 
 const MessageForm = ({token, setPosts}) => {
 	const {postId} = useParams();
+	// console.log(params);
 	const [content, setContent] = useState('');
+	
 
 	const handleMessage = async (e) => {
 		e.preventDefault();
@@ -31,6 +33,9 @@ const MessageForm = ({token, setPosts}) => {
 		</form>
  
 	)
+
+	
+
 }
 
 export default MessageForm;

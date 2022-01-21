@@ -106,7 +106,7 @@ export const newPost = async (token, postObject) => {
 	}
   }
 
-  export const deletePost = async (POST_ID, token) => {
+  export const deletePost = async (token, POST_ID) => {
 	try {
 	  await fetch(`${BASE_URL}/posts/${POST_ID}`, {
 		method: 'DELETE',
@@ -121,7 +121,7 @@ export const newPost = async (token, postObject) => {
   }
 
 
-export const addMessage = async (token, id,content, message) => {
+export const addMessage = async (token, id,content) => {
 	try{
 	const response = await fetch(`${BASE_URL}/posts/${id}/messages`, {
 	  method: "POST",
