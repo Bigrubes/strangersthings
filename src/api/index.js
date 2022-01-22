@@ -119,9 +119,9 @@ export const newPost = async (token, postObject) => {
   }
 
 
-export const addMessage = async (token, id,content) => {
+export const addMessage = async (token, _id,content) => {
 	try{
-	const response = await fetch(`${BASE_URL}/posts/${id}/messages`, {
+	const response = await fetch(`${BASE_URL}/posts/${_id}/messages`, {
 	  method: "POST",
 	  headers: {
 		'Content-Type': 'application/json',

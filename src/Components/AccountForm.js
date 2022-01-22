@@ -31,7 +31,7 @@ const AccountForm = ({ setToken, setUser}) => {
         setPassword('');
         setToken(token);
         setUser(users);
-        navigate('/home');
+        navigate('/posts');
         localStorage.setItem('token', token);
       }
     }

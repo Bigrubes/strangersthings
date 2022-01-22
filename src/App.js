@@ -44,13 +44,14 @@ const App = () => {
   }, [token]);
   return <>
    {token && <h2>Hello, {user.username}</h2>}
-    <Link to="/"></Link> | 
-    <Link to="/home">Home</Link> | 
-    <Link to="/account/login">Login</Link> |
-    <Link to="/posts">Posts</Link> |
+    <Link to="/"></Link> 
+    {token &&<Link to="/home">Home</Link>} 
+    {!token &&<Link to="/account/login">Login</Link>} 
+    <Link to="/posts">Posts</Link> 
     {token && <button onClick={() => {
       setToken('');
       localStorage.removeItem('token');
+      navigate('/posts');
     }}>Log Out</button>}
     <Routes>
       <Route path="/home" element={<Home />} />

@@ -22,12 +22,12 @@ const PostSingle = ({post, token, children, posts, setPosts, newPosts}) => {
 
   return post 
     ? <div style={{margin: '.2rem'}}>
-        <h3>title: {post.title}</h3>
+        <h3>Title: {post.title}</h3>
         <div>Description: {post.description}</div>
         <div>price: {post.price}</div>
         <div>Location: {post.location}</div>
         {post.isAuthor && <button onClick={handleDelete}>DELETE</button>}
-        {!post.isAuthor && <button onClick={() => {navigate(`/posts/${post._id}/messages`)}}>Message</button>}
+        {token && !post.isAuthor && <button onClick={() => {navigate(`/posts/${post._id}/messages`)}}>Message</button>}
         {post.messages.map((elem) => {
           return (
             <div>
