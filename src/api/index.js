@@ -69,8 +69,11 @@ export const register = async (username, password) => {
 			}
 		})
 	})
-	const { data: {token, message} } = await response.json();
-	return token, message;
+	const data = await response.json();
+	// const { data: {token, message} } = await response.json();
+	console.log("data", data)
+	return data
+		// return (token, message);
 
 }catch (error){
 	console.error(error)
