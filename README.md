@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+This site is like Craigslist and allows a user to register/login, create a post of an item to sell, view other posts, delete a post and send messages to other users.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 =======
 # strangerthings
->>>>>>> 72d33d06b6c4a1a6329ca745a330df6f000c705e
+
